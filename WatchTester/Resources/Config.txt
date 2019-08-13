@@ -1,8 +1,7 @@
-Watch Location=1130X585
+WatchLocation=1130X585
 TopMost=true
 <Colors>
 OnColor=255,60,187,199
-OffColor=15,207,207,207
-DisplayColor=100,0,45,48
-BackgroundColor=100,45,45,48
-TextColor=100,255,255,255
+DisplayColor=255,0,45,48
+BackgroundColor=255,45,45,48
+TextColor=255,255,255,255

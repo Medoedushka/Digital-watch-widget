@@ -14,6 +14,7 @@ namespace WatchTester
         bool ActiveWatch = true;
         string configFile = @"..\..\Resources\Config.txt";
         ConfigControler configControler;
+        Color Background { get; set; }
 
         private const int WM_NCHITTEST = 0x84;
         private const int HT_CLIENT = 0x1;
@@ -53,8 +54,16 @@ namespace WatchTester
 
         private void tsm_MostTopChange_Click(object sender, EventArgs e)
         {
-            if (!tsm_MostTopChange.Checked) this.TopMost = true;
-            else this.TopMost = false;
+            if (!tsm_MostTopChange.Checked)
+            {
+                this.TopMost = true;
+                configControler.SetConfig("TopMost=true");
+            }
+            else
+            {
+                this.TopMost = false;
+                configControler.SetConfig("TopMost=false");
+            }
             tsm_MostTopChange.Checked = !tsm_MostTopChange.Checked;
             
         }
@@ -67,15 +76,14 @@ namespace WatchTester
         private void WatchTester_Load(object sender, EventArgs e)
         {
             SetAutoRunValue(true, Assembly.GetExecutingAssembly().Location);
-            string[] el = configControler.GetConfig("Watch Location").Split('X');
-            this.Location = new Point(int.Parse(el[0]), int.Parse(el[1]));
+            InitConfig();
             digitalWatch1.WatchOn();
         }
 
         private void закрепитьВиджетToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string newPos = this.Location.X + "X" + this.Location.Y;
-            configControler.SetConfig("Watch Location=" + newPos);
+            configControler.SetConfig("WatchLocation=" + newPos);
         }
 
 
@@ -108,6 +116,28 @@ namespace WatchTester
                 reg.Close();
             }
             return true;
+        }
+
+        // Инициализация начальных настроек.
+        private void InitConfig()
+        {
+            // Настройка координат расположения формы при старте.
+            string[] el = configControler.GetConfig("WatchLocation").Split('X');
+            this.Location = new Point(int.Parse(el[0]), int.Parse(el[1]));
+
+            // Настройках расположения окна поверх других окон.
+            string topMost = configControler.GetConfig("TopMost");
+            if (topMost == "true")
+            {
+                this.TopMost = true;
+                tsm_MostTopChange.Checked = true;
+            }
+            else
+            {
+                this.TopMost = false;
+                tsm_MostTopChange.Checked = false;
+            }
+
         }
     }
 }
