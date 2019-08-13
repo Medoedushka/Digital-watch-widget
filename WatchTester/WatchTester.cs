@@ -16,16 +16,25 @@ namespace WatchTester
         ConfigControler configControler;
         Color Background { get; set; }
 
-        private const int WM_NCHITTEST = 0x84;
-        private const int HT_CLIENT = 0x1;
-        private const int HT_CAPTION = 0x2;
-        protected override void WndProc(ref Message m)
+        [DllImport("user32", CharSet = CharSet.Auto)]
+        internal extern static bool PostMessage(IntPtr hWnd, uint Msg, uint WParam, uint LParam);
+        [DllImport("user32", CharSet = CharSet.Auto)]
+        internal extern static bool ReleaseCapture();
+
+        const uint WM_SYSCOMMAND = 0x0112;
+        const uint DOMOVE = 0xF012;
+        const uint DOSIZE = 0xF008;
+
+        private void digitalWatch1_MouseDown(object sender, MouseEventArgs e)
         {
-            base.WndProc(ref m);
-            if (m.Msg == WM_NCHITTEST) m.Result = (IntPtr)(HT_CAPTION);
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                PostMessage(this.Handle, WM_SYSCOMMAND, DOMOVE, 0);
+            }
+
         }
         
-
         public WatchTester()
         {
             InitializeComponent();
@@ -75,9 +84,9 @@ namespace WatchTester
 
         private void WatchTester_Load(object sender, EventArgs e)
         {
-            
             InitConfig();
             digitalWatch1.WatchOn();
+            
         }
 
         private void закрепитьВиджетToolStripMenuItem_Click(object sender, EventArgs e)
@@ -159,5 +168,6 @@ namespace WatchTester
             }
             tsm_AddToAutoRun.Checked = !tsm_AddToAutoRun.Checked;
         }
+        
     }
 }
