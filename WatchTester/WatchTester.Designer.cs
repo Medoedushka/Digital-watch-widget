@@ -103,12 +103,13 @@
             // 
             // cms_Settings
             // 
+            this.cms_Settings.Font = new System.Drawing.Font("Century", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cms_Settings.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.видToolStripMenuItem,
             this.закрепитьВиджетToolStripMenuItem,
             this.tsm_AddToAutoRun});
             this.cms_Settings.Name = "cms_Settings";
-            this.cms_Settings.Size = new System.Drawing.Size(251, 92);
+            this.cms_Settings.Size = new System.Drawing.Size(248, 92);
             // 
             // видToolStripMenuItem
             // 

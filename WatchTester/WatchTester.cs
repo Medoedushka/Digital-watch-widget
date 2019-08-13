@@ -86,7 +86,7 @@ namespace WatchTester
         {
             InitConfig();
             digitalWatch1.WatchOn();
-            
+           
         }
 
         private void закрепитьВиджетToolStripMenuItem_Click(object sender, EventArgs e)
@@ -150,8 +150,16 @@ namespace WatchTester
 
             // Настройка автозагрузки виджета.
             answer = configControler.GetConfig("AutoRun");
-            if (answer == "true") tsm_AddToAutoRun.Checked = true;
-            else tsm_AddToAutoRun.Checked = false;
+            if (answer == "true")
+            {
+                SetAutoRunValue(true, Assembly.GetExecutingAssembly().Location);
+                tsm_AddToAutoRun.Checked = true;
+            } 
+            else
+            {
+                SetAutoRunValue(false, Assembly.GetExecutingAssembly().Location);
+                tsm_AddToAutoRun.Checked = false;
+            }
 
             // Настройка прозрачности виджета.
             answer = configControler.GetConfig("Opacity");
@@ -165,17 +173,11 @@ namespace WatchTester
         // Настройка прозрачности виджета.
         private void tsm_AddToAutoRun_Click(object sender, EventArgs e)
         {
-            if (!tsm_AddToAutoRun.Checked)
-            {
-                SetAutoRunValue(true, Assembly.GetExecutingAssembly().Location);
-                configControler.SetConfig("AutoRun=true");
-            }
-            else
-            {
-                SetAutoRunValue(false, Assembly.GetExecutingAssembly().Location);
-                configControler.SetConfig("AutoRun=false");
-            }
+            if (!tsm_AddToAutoRun.Checked) configControler.SetConfig("AutoRun=true");
+            else configControler.SetConfig("AutoRun=false");
             tsm_AddToAutoRun.Checked = !tsm_AddToAutoRun.Checked;
+            notifyIcon1.ShowBalloonTip(5000, "Изменение настроек.", 
+                "Для того, чтобы изменения пришли в силу, перезагрузите виджет.", ToolTipIcon.Info);
         }
         private void tsm_Opacity25_Click(object sender, EventArgs e)
         {

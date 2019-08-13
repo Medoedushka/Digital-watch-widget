@@ -1,6 +1,6 @@
 WatchLocation=895X11
 TopMost=true
-AutoRun=false
+AutoRun=true
 Opacity=1
 <Colors>
 OnColor=255,60,187,199
