@@ -37,6 +37,11 @@
             this.cms_Settings = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.видToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsm_MostTopChange = new System.Windows.Forms.ToolStripMenuItem();
+            this.прозрачностьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsm_Opacity25 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsm_Opacity50 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsm_Opacity75 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsm_Opacity100 = new System.Windows.Forms.ToolStripMenuItem();
             this.закрепитьВиджетToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsm_AddToAutoRun = new System.Windows.Forms.ToolStripMenuItem();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
@@ -103,13 +108,14 @@
             this.закрепитьВиджетToolStripMenuItem,
             this.tsm_AddToAutoRun});
             this.cms_Settings.Name = "cms_Settings";
-            this.cms_Settings.Size = new System.Drawing.Size(251, 70);
+            this.cms_Settings.Size = new System.Drawing.Size(251, 92);
             // 
             // видToolStripMenuItem
             // 
             this.видToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.видToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsm_MostTopChange});
+            this.tsm_MostTopChange,
+            this.прозрачностьToolStripMenuItem});
             this.видToolStripMenuItem.Font = new System.Drawing.Font("Century", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.видToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.видToolStripMenuItem.Name = "видToolStripMenuItem";
@@ -126,6 +132,55 @@
             this.tsm_MostTopChange.Size = new System.Drawing.Size(180, 22);
             this.tsm_MostTopChange.Text = "Поверх других окон";
             this.tsm_MostTopChange.Click += new System.EventHandler(this.tsm_MostTopChange_Click);
+            // 
+            // прозрачностьToolStripMenuItem
+            // 
+            this.прозрачностьToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.прозрачностьToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsm_Opacity25,
+            this.tsm_Opacity50,
+            this.tsm_Opacity75,
+            this.tsm_Opacity100});
+            this.прозрачностьToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.прозрачностьToolStripMenuItem.Name = "прозрачностьToolStripMenuItem";
+            this.прозрачностьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.прозрачностьToolStripMenuItem.Text = "Прозрачность";
+            // 
+            // tsm_Opacity25
+            // 
+            this.tsm_Opacity25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.tsm_Opacity25.ForeColor = System.Drawing.Color.White;
+            this.tsm_Opacity25.Name = "tsm_Opacity25";
+            this.tsm_Opacity25.Size = new System.Drawing.Size(180, 22);
+            this.tsm_Opacity25.Text = "25%";
+            this.tsm_Opacity25.Click += new System.EventHandler(this.tsm_Opacity25_Click);
+            // 
+            // tsm_Opacity50
+            // 
+            this.tsm_Opacity50.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.tsm_Opacity50.ForeColor = System.Drawing.Color.White;
+            this.tsm_Opacity50.Name = "tsm_Opacity50";
+            this.tsm_Opacity50.Size = new System.Drawing.Size(180, 22);
+            this.tsm_Opacity50.Text = "50%";
+            this.tsm_Opacity50.Click += new System.EventHandler(this.tsm_Opacity50_Click);
+            // 
+            // tsm_Opacity75
+            // 
+            this.tsm_Opacity75.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.tsm_Opacity75.ForeColor = System.Drawing.Color.White;
+            this.tsm_Opacity75.Name = "tsm_Opacity75";
+            this.tsm_Opacity75.Size = new System.Drawing.Size(180, 22);
+            this.tsm_Opacity75.Text = "75%";
+            this.tsm_Opacity75.Click += new System.EventHandler(this.tsm_Opacity75_Click);
+            // 
+            // tsm_Opacity100
+            // 
+            this.tsm_Opacity100.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.tsm_Opacity100.ForeColor = System.Drawing.Color.White;
+            this.tsm_Opacity100.Name = "tsm_Opacity100";
+            this.tsm_Opacity100.Size = new System.Drawing.Size(180, 22);
+            this.tsm_Opacity100.Text = "100%";
+            this.tsm_Opacity100.Click += new System.EventHandler(this.tsm_Opacity100_Click);
             // 
             // закрепитьВиджетToolStripMenuItem
             // 
@@ -212,6 +267,11 @@
         private System.Windows.Forms.ContextMenuStrip cms_NotifyIcon;
         private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tsm_AddToAutoRun;
+        private System.Windows.Forms.ToolStripMenuItem прозрачностьToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsm_Opacity25;
+        private System.Windows.Forms.ToolStripMenuItem tsm_Opacity50;
+        private System.Windows.Forms.ToolStripMenuItem tsm_Opacity75;
+        private System.Windows.Forms.ToolStripMenuItem tsm_Opacity100;
     }
 }
 

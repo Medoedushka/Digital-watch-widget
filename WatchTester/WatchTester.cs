@@ -148,12 +148,21 @@ namespace WatchTester
                 tsm_MostTopChange.Checked = false;
             }
 
-            // Настройка автозагрузки приложения.
+            // Настройка автозагрузки виджета.
             answer = configControler.GetConfig("AutoRun");
             if (answer == "true") tsm_AddToAutoRun.Checked = true;
             else tsm_AddToAutoRun.Checked = false;
+
+            // Настройка прозрачности виджета.
+            answer = configControler.GetConfig("Opacity");
+            this.Opacity = double.Parse(answer.Replace('.', ','));
+            if (answer == "0.25") tsm_Opacity25.Checked = true;
+            else if (answer == "0.50") tsm_Opacity50.Checked = true;
+            else if (answer == "0.75") tsm_Opacity75.Checked = true;
+            else tsm_Opacity100.Checked = true;
         }
 
+        // Настройка прозрачности виджета.
         private void tsm_AddToAutoRun_Click(object sender, EventArgs e)
         {
             if (!tsm_AddToAutoRun.Checked)
@@ -168,6 +177,41 @@ namespace WatchTester
             }
             tsm_AddToAutoRun.Checked = !tsm_AddToAutoRun.Checked;
         }
-        
+        private void tsm_Opacity25_Click(object sender, EventArgs e)
+        {
+            this.Opacity = 0.25;
+            configControler.SetConfig("Opacity=0.25");
+            tsm_Opacity25.Checked = true;
+            tsm_Opacity50.Checked = false;
+            tsm_Opacity75.Checked = false;
+            tsm_Opacity100.Checked = false;
+        }
+        private void tsm_Opacity50_Click(object sender, EventArgs e)
+        {
+            this.Opacity = 0.50;
+            configControler.SetConfig("Opacity=0.50");
+            tsm_Opacity25.Checked = false;
+            tsm_Opacity50.Checked = true;
+            tsm_Opacity75.Checked = false;
+            tsm_Opacity100.Checked = false;
+        }
+        private void tsm_Opacity75_Click(object sender, EventArgs e)
+        {
+            this.Opacity = 0.75;
+            configControler.SetConfig("Opacity=0.75");
+            tsm_Opacity25.Checked = false;
+            tsm_Opacity50.Checked = false;
+            tsm_Opacity75.Checked = true;
+            tsm_Opacity100.Checked = false;
+        }
+        private void tsm_Opacity100_Click(object sender, EventArgs e)
+        {
+            this.Opacity = 1;
+            configControler.SetConfig("Opacity=1");
+            tsm_Opacity25.Checked = false;
+            tsm_Opacity50.Checked = false;
+            tsm_Opacity75.Checked = false;
+            tsm_Opacity100.Checked = true;
+        }
     }
 }
