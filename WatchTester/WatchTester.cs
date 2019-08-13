@@ -75,7 +75,7 @@ namespace WatchTester
 
         private void WatchTester_Load(object sender, EventArgs e)
         {
-            SetAutoRunValue(true, Assembly.GetExecutingAssembly().Location);
+            
             InitConfig();
             digitalWatch1.WatchOn();
         }
@@ -121,13 +121,14 @@ namespace WatchTester
         // Инициализация начальных настроек.
         private void InitConfig()
         {
+            string answer;
             // Настройка координат расположения формы при старте.
             string[] el = configControler.GetConfig("WatchLocation").Split('X');
             this.Location = new Point(int.Parse(el[0]), int.Parse(el[1]));
 
             // Настройках расположения окна поверх других окон.
-            string topMost = configControler.GetConfig("TopMost");
-            if (topMost == "true")
+            answer = configControler.GetConfig("TopMost");
+            if (answer == "true")
             {
                 this.TopMost = true;
                 tsm_MostTopChange.Checked = true;
@@ -138,6 +139,25 @@ namespace WatchTester
                 tsm_MostTopChange.Checked = false;
             }
 
+            // Настройка автозагрузки приложения.
+            answer = configControler.GetConfig("AutoRun");
+            if (answer == "true") tsm_AddToAutoRun.Checked = true;
+            else tsm_AddToAutoRun.Checked = false;
+        }
+
+        private void tsm_AddToAutoRun_Click(object sender, EventArgs e)
+        {
+            if (!tsm_AddToAutoRun.Checked)
+            {
+                SetAutoRunValue(true, Assembly.GetExecutingAssembly().Location);
+                configControler.SetConfig("AutoRun=true");
+            }
+            else
+            {
+                SetAutoRunValue(false, Assembly.GetExecutingAssembly().Location);
+                configControler.SetConfig("AutoRun=false");
+            }
+            tsm_AddToAutoRun.Checked = !tsm_AddToAutoRun.Checked;
         }
     }
 }

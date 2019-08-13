@@ -1,5 +1,6 @@
-WatchLocation=1130X585
+WatchLocation=895X11
 TopMost=true
+AutoRun=false
 <Colors>
 OnColor=255,60,187,199
 DisplayColor=255,0,45,48

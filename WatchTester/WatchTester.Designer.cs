@@ -41,6 +41,7 @@
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.cms_NotifyIcon = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsm_AddToAutoRun = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pcb_OnOff)).BeginInit();
             this.cms_Settings.SuspendLayout();
             this.cms_NotifyIcon.SuspendLayout();
@@ -99,9 +100,10 @@
             // 
             this.cms_Settings.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.видToolStripMenuItem,
-            this.закрепитьВиджетToolStripMenuItem});
+            this.закрепитьВиджетToolStripMenuItem,
+            this.tsm_AddToAutoRun});
             this.cms_Settings.Name = "cms_Settings";
-            this.cms_Settings.Size = new System.Drawing.Size(173, 48);
+            this.cms_Settings.Size = new System.Drawing.Size(251, 92);
             // 
             // видToolStripMenuItem
             // 
@@ -111,7 +113,7 @@
             this.видToolStripMenuItem.Font = new System.Drawing.Font("Century", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.видToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.видToolStripMenuItem.Name = "видToolStripMenuItem";
-            this.видToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.видToolStripMenuItem.Size = new System.Drawing.Size(250, 22);
             this.видToolStripMenuItem.Text = "Вид";
             // 
             // tsm_MostTopChange
@@ -131,7 +133,7 @@
             this.закрепитьВиджетToolStripMenuItem.Font = new System.Drawing.Font("Century", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.закрепитьВиджетToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.закрепитьВиджетToolStripMenuItem.Name = "закрепитьВиджетToolStripMenuItem";
-            this.закрепитьВиджетToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.закрепитьВиджетToolStripMenuItem.Size = new System.Drawing.Size(250, 22);
             this.закрепитьВиджетToolStripMenuItem.Text = "Закрепить виджет";
             this.закрепитьВиджетToolStripMenuItem.Click += new System.EventHandler(this.закрепитьВиджетToolStripMenuItem_Click);
             // 
@@ -155,6 +157,15 @@
             this.выходToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
             this.выходToolStripMenuItem.Text = "Выход";
             this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
+            // 
+            // tsm_AddToAutoRun
+            // 
+            this.tsm_AddToAutoRun.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.tsm_AddToAutoRun.ForeColor = System.Drawing.Color.White;
+            this.tsm_AddToAutoRun.Name = "tsm_AddToAutoRun";
+            this.tsm_AddToAutoRun.Size = new System.Drawing.Size(250, 22);
+            this.tsm_AddToAutoRun.Text = "Добавить виджет в автозагрузку";
+            this.tsm_AddToAutoRun.Click += new System.EventHandler(this.tsm_AddToAutoRun_Click);
             // 
             // WatchTester
             // 
@@ -199,6 +210,7 @@
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.ContextMenuStrip cms_NotifyIcon;
         private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsm_AddToAutoRun;
     }
 }
 
