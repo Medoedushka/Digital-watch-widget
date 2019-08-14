@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.489
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WatchTester", "WatchTester\WatchTester.csproj", "{C8EA7E41-66B4-4C48-9A33-D7C13490FA39}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "DigitalWatchWidget", "DigitalWatchWidget\DigitalWatchWidget.vdproj", "{2C96B4E5-8299-4E09-AFD8-A4AA08F23F12}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,8 @@ Global
 		{C8EA7E41-66B4-4C48-9A33-D7C13490FA39}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C8EA7E41-66B4-4C48-9A33-D7C13490FA39}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C8EA7E41-66B4-4C48-9A33-D7C13490FA39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C96B4E5-8299-4E09-AFD8-A4AA08F23F12}.Debug|Any CPU.ActiveCfg = Debug
+		{2C96B4E5-8299-4E09-AFD8-A4AA08F23F12}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -15,7 +15,7 @@ namespace WatchTester
     public partial class WatchTester : Form
     {
         bool ActiveWatch = true;
-        string configFile = @"Config.txt";
+        string configFile = @"D:\Проекты C#\Digital-watch-widget\WatchTester\bin\Debug\Config.txt";
         ConfigControler configControler;
         Color Background { get; set; }
 
@@ -46,17 +46,18 @@ namespace WatchTester
             string newStr = "";
             for (int i = 0; i < el.Length; i++)
             {
-                newStr += el[i] + "\\";
-                if (el[i] == "Debug")
+                
+                if (i == el.Length - 1)
                 {
                     newStr += "Config.txt";
                     configFile = newStr;
                     break;
                 }
+                newStr += el[i] + "\\";
             }
-            
-            configControler = new ConfigControler(newStr);
 
+            configControler = new ConfigControler(configFile);
+            
         }
 
         // Включение/выключение часов.
