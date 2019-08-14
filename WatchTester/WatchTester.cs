@@ -6,6 +6,9 @@ using System.Windows.Forms;
 using MyClassLibrary;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
+using System.IO;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace WatchTester
 {
@@ -34,11 +37,11 @@ namespace WatchTester
             }
 
         }
-        
+
         public WatchTester()
         {
             InitializeComponent();
-            MessageBox.Show(Assembly.GetExecutingAssembly().Location);
+
             string[] el = Assembly.GetExecutingAssembly().Location.Split('\\');
             string newStr = "";
             for (int i = 0; i < el.Length; i++)
@@ -51,22 +54,24 @@ namespace WatchTester
                     break;
                 }
             }
-            configControler = new ConfigControler(configFile);
             
+            configControler = new ConfigControler(newStr);
+
         }
-        
+
         // Включение/выключение часов.
-        private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
+        private void pcb_OnOff_MouseDown(object sender, MouseEventArgs e)
         {
             pcb_OnOff.Image = Properties.Resources.pressedButton;
         }
-        private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
+        private void pcb_OnOff_MouseUp(object sender, MouseEventArgs e)
         {
             pcb_OnOff.Image = Properties.Resources.unpressedButton;
             if (!ActiveWatch)
                 digitalWatch1.WatchOn();
             else digitalWatch1.WatchOff();
             ActiveWatch = !ActiveWatch;
+            
         }
 
         private void WatchTester_MouseClick(object sender, MouseEventArgs e)
@@ -87,7 +92,7 @@ namespace WatchTester
                 configControler.SetConfig("TopMost=false");
             }
             tsm_MostTopChange.Checked = !tsm_MostTopChange.Checked;
-            
+
         }
 
         private void выходToolStripMenuItem_Click(object sender, EventArgs e)
@@ -97,10 +102,9 @@ namespace WatchTester
 
         private void WatchTester_Load(object sender, EventArgs e)
         {
-            
             InitConfig();
             digitalWatch1.WatchOn();
-           
+
         }
 
         private void закрепитьВиджетToolStripMenuItem_Click(object sender, EventArgs e)
@@ -168,7 +172,7 @@ namespace WatchTester
             {
                 SetAutoRunValue(true, Assembly.GetExecutingAssembly().Location);
                 tsm_AddToAutoRun.Checked = true;
-            } 
+            }
             else
             {
                 SetAutoRunValue(false, Assembly.GetExecutingAssembly().Location);
@@ -184,15 +188,16 @@ namespace WatchTester
             else tsm_Opacity100.Checked = true;
         }
 
-        // Настройка прозрачности виджета.
+        // Настройка автозагрузки виджета.
         private void tsm_AddToAutoRun_Click(object sender, EventArgs e)
         {
             if (!tsm_AddToAutoRun.Checked) configControler.SetConfig("AutoRun=true");
             else configControler.SetConfig("AutoRun=false");
             tsm_AddToAutoRun.Checked = !tsm_AddToAutoRun.Checked;
-            notifyIcon1.ShowBalloonTip(5000, "Изменение настроек.", 
+            notifyIcon1.ShowBalloonTip(5000, "Изменение настроек.",
                 "Для того, чтобы изменения пришли в силу, перезагрузите виджет.", ToolTipIcon.Info);
         }
+        // Настройка прозрачности виджета.
         private void tsm_Opacity25_Click(object sender, EventArgs e)
         {
             this.Opacity = 0.25;
@@ -229,6 +234,16 @@ namespace WatchTester
             tsm_Opacity75.Checked = false;
             tsm_Opacity100.Checked = true;
         }
-        
+
+        private void pcb_Alarm_MouseDown(object sender, MouseEventArgs e)
+        {
+            pcb_Alarm.Image = Properties.Resources.pressedButton;
+            digitalWatch1.AlarmOn();
+        }
+
+        private void pcb_Alarm_MouseUp(object sender, MouseEventArgs e)
+        {
+            pcb_Alarm.Image = Properties.Resources.unpressedButton;
+        }
     }
 }

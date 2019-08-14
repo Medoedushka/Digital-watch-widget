@@ -1,9 +1,0 @@
-WatchLocation=894X4
-TopMost=true
-AutoRun=true
-Opacity=1
-<Colors>
-OnColor=255,60,187,199
-DisplayColor=255,0,45,48
-BackgroundColor=255,45,45,48
-TextColor=255,255,255,255

@@ -109,9 +109,6 @@
     <None Include="Resources\imgonline-com-ua-Resize-2jtGx8psVGA2W.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Config.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.6.1 %28x86 и x64%29</ProductName>

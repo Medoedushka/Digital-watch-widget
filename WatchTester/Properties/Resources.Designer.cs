@@ -61,15 +61,6 @@ namespace WatchTester.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на 50X50.
-        /// </summary>
-        internal static string Config {
-            get {
-                return ResourceManager.GetString("Config", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap pressedButton {

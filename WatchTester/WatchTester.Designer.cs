@@ -47,9 +47,17 @@
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.cms_NotifyIcon = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pcb_Alarm = new System.Windows.Forms.PictureBox();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.pcb_OnOff)).BeginInit();
             this.cms_Settings.SuspendLayout();
             this.cms_NotifyIcon.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcb_Alarm)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
             this.SuspendLayout();
             // 
             // digitalWatch1
@@ -73,7 +81,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(122, 117);
+            this.label2.Location = new System.Drawing.Point(122, 150);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(106, 15);
             this.label2.TabIndex = 3;
@@ -87,12 +95,11 @@
             this.pcb_OnOff.Size = new System.Drawing.Size(25, 25);
             this.pcb_OnOff.TabIndex = 4;
             this.pcb_OnOff.TabStop = false;
-            this.pcb_OnOff.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
-            this.pcb_OnOff.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
+            this.pcb_OnOff.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pcb_OnOff_MouseDown);
+            this.pcb_OnOff.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pcb_OnOff_MouseUp);
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.White;
@@ -224,14 +231,71 @@
             this.выходToolStripMenuItem.Text = "Выход";
             this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
             // 
+            // pcb_Alarm
+            // 
+            this.pcb_Alarm.Image = global::WatchTester.Properties.Resources.unpressedButton;
+            this.pcb_Alarm.Location = new System.Drawing.Point(43, 92);
+            this.pcb_Alarm.Name = "pcb_Alarm";
+            this.pcb_Alarm.Size = new System.Drawing.Size(25, 25);
+            this.pcb_Alarm.TabIndex = 4;
+            this.pcb_Alarm.TabStop = false;
+            this.pcb_Alarm.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pcb_Alarm_MouseDown);
+            this.pcb_Alarm.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pcb_Alarm_MouseUp);
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.numericUpDown1.ForeColor = System.Drawing.Color.White;
+            this.numericUpDown1.Location = new System.Drawing.Point(74, 95);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            23,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(37, 20);
+            this.numericUpDown1.TabIndex = 6;
+            // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.numericUpDown2.ForeColor = System.Drawing.Color.White;
+            this.numericUpDown2.Location = new System.Drawing.Point(117, 95);
+            this.numericUpDown2.Maximum = new decimal(new int[] {
+            59,
+            0,
+            0,
+            0});
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(37, 20);
+            this.numericUpDown2.TabIndex = 6;
+            // 
+            // numericUpDown3
+            // 
+            this.numericUpDown3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.numericUpDown3.ForeColor = System.Drawing.Color.White;
+            this.numericUpDown3.Location = new System.Drawing.Point(160, 95);
+            this.numericUpDown3.Maximum = new decimal(new int[] {
+            59,
+            0,
+            0,
+            0});
+            this.numericUpDown3.Name = "numericUpDown3";
+            this.numericUpDown3.Size = new System.Drawing.Size(37, 20);
+            this.numericUpDown3.TabIndex = 6;
+            // 
             // WatchTester
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.ClientSize = new System.Drawing.Size(231, 137);
+            this.ClientSize = new System.Drawing.Size(231, 170);
             this.ContextMenuStrip = this.cms_Settings;
+            this.Controls.Add(this.numericUpDown3);
+            this.Controls.Add(this.numericUpDown2);
+            this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.pcb_Alarm);
             this.Controls.Add(this.pcb_OnOff);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.digitalWatch1);
@@ -251,6 +315,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pcb_OnOff)).EndInit();
             this.cms_Settings.ResumeLayout(false);
             this.cms_NotifyIcon.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pcb_Alarm)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -274,6 +342,10 @@
         private System.Windows.Forms.ToolStripMenuItem tsm_Opacity50;
         private System.Windows.Forms.ToolStripMenuItem tsm_Opacity75;
         private System.Windows.Forms.ToolStripMenuItem tsm_Opacity100;
+        private System.Windows.Forms.PictureBox pcb_Alarm;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown numericUpDown3;
     }
 }
 
