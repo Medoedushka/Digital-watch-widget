@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WatchTester));
             this.digitalWatch1 = new Watch.DigitalWatch();
             this.label2 = new System.Windows.Forms.Label();
-            this.pcb_OnOff = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cms_Settings = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.видToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,17 +46,19 @@
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.cms_NotifyIcon = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pcb_Alarm = new System.Windows.Forms.PictureBox();
             this.nud_Hours = new System.Windows.Forms.NumericUpDown();
             this.nud_Minutes = new System.Windows.Forms.NumericUpDown();
             this.nud_Seconds = new System.Windows.Forms.NumericUpDown();
-            ((System.ComponentModel.ISupportInitialize)(this.pcb_OnOff)).BeginInit();
+            this.pcb_Alarm = new System.Windows.Forms.PictureBox();
+            this.pcb_OnOff = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.cms_Settings.SuspendLayout();
             this.cms_NotifyIcon.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pcb_Alarm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Hours)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Minutes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Seconds)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcb_Alarm)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcb_OnOff)).BeginInit();
             this.SuspendLayout();
             // 
             // digitalWatch1
@@ -67,7 +68,7 @@
             this.digitalWatch1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.digitalWatch1.DisplayColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.digitalWatch1.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.digitalWatch1.Location = new System.Drawing.Point(2, 9);
+            this.digitalWatch1.Location = new System.Drawing.Point(2, 16);
             this.digitalWatch1.Margin = new System.Windows.Forms.Padding(4);
             this.digitalWatch1.Name = "digitalWatch1";
             this.digitalWatch1.OffColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
@@ -77,35 +78,23 @@
             // 
             // label2
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(135, 150);
+            this.label2.Location = new System.Drawing.Point(1, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(106, 15);
             this.label2.TabIndex = 3;
             this.label2.Text = "Created by Medoed";
             // 
-            // pcb_OnOff
-            // 
-            this.pcb_OnOff.Image = global::WatchTester.Properties.Resources.unpressedButton;
-            this.pcb_OnOff.Location = new System.Drawing.Point(12, 92);
-            this.pcb_OnOff.Name = "pcb_OnOff";
-            this.pcb_OnOff.Size = new System.Drawing.Size(25, 25);
-            this.pcb_OnOff.TabIndex = 4;
-            this.pcb_OnOff.TabStop = false;
-            this.pcb_OnOff.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pcb_OnOff_MouseDown);
-            this.pcb_OnOff.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pcb_OnOff_MouseUp);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Font = new System.Drawing.Font("Century", 7F);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(0, 120);
+            this.label1.Location = new System.Drawing.Point(2, 126);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 15);
+            this.label1.Size = new System.Drawing.Size(48, 15);
             this.label1.TabIndex = 5;
             this.label1.Text = "ON/OFF";
             // 
@@ -231,22 +220,11 @@
             this.выходToolStripMenuItem.Text = "Выход";
             this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
             // 
-            // pcb_Alarm
-            // 
-            this.pcb_Alarm.Image = global::WatchTester.Properties.Resources.unpressedButton;
-            this.pcb_Alarm.Location = new System.Drawing.Point(43, 92);
-            this.pcb_Alarm.Name = "pcb_Alarm";
-            this.pcb_Alarm.Size = new System.Drawing.Size(25, 25);
-            this.pcb_Alarm.TabIndex = 4;
-            this.pcb_Alarm.TabStop = false;
-            this.pcb_Alarm.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pcb_Alarm_MouseDown);
-            this.pcb_Alarm.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pcb_Alarm_MouseUp);
-            // 
             // nud_Hours
             // 
             this.nud_Hours.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.nud_Hours.ForeColor = System.Drawing.Color.White;
-            this.nud_Hours.Location = new System.Drawing.Point(74, 95);
+            this.nud_Hours.Location = new System.Drawing.Point(102, 102);
             this.nud_Hours.Maximum = new decimal(new int[] {
             23,
             0,
@@ -260,7 +238,7 @@
             // 
             this.nud_Minutes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.nud_Minutes.ForeColor = System.Drawing.Color.White;
-            this.nud_Minutes.Location = new System.Drawing.Point(117, 95);
+            this.nud_Minutes.Location = new System.Drawing.Point(145, 102);
             this.nud_Minutes.Maximum = new decimal(new int[] {
             59,
             0,
@@ -274,7 +252,7 @@
             // 
             this.nud_Seconds.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.nud_Seconds.ForeColor = System.Drawing.Color.White;
-            this.nud_Seconds.Location = new System.Drawing.Point(160, 95);
+            this.nud_Seconds.Location = new System.Drawing.Point(188, 102);
             this.nud_Seconds.Maximum = new decimal(new int[] {
             59,
             0,
@@ -284,16 +262,50 @@
             this.nud_Seconds.Size = new System.Drawing.Size(37, 20);
             this.nud_Seconds.TabIndex = 6;
             // 
+            // pcb_Alarm
+            // 
+            this.pcb_Alarm.Image = global::WatchTester.Properties.Resources.unpressedButton;
+            this.pcb_Alarm.Location = new System.Drawing.Point(60, 98);
+            this.pcb_Alarm.Name = "pcb_Alarm";
+            this.pcb_Alarm.Size = new System.Drawing.Size(25, 25);
+            this.pcb_Alarm.TabIndex = 4;
+            this.pcb_Alarm.TabStop = false;
+            this.pcb_Alarm.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pcb_Alarm_MouseDown);
+            this.pcb_Alarm.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pcb_Alarm_MouseUp);
+            // 
+            // pcb_OnOff
+            // 
+            this.pcb_OnOff.Image = global::WatchTester.Properties.Resources.unpressedButton;
+            this.pcb_OnOff.Location = new System.Drawing.Point(12, 98);
+            this.pcb_OnOff.Name = "pcb_OnOff";
+            this.pcb_OnOff.Size = new System.Drawing.Size(25, 25);
+            this.pcb_OnOff.TabIndex = 4;
+            this.pcb_OnOff.TabStop = false;
+            this.pcb_OnOff.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pcb_OnOff_MouseDown);
+            this.pcb_OnOff.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pcb_OnOff_MouseUp);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century", 7F);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(53, 126);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(44, 15);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "ALARM";
+            // 
             // WatchTester
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.ClientSize = new System.Drawing.Size(244, 170);
+            this.ClientSize = new System.Drawing.Size(244, 151);
             this.ContextMenuStrip = this.cms_Settings;
             this.Controls.Add(this.nud_Seconds);
             this.Controls.Add(this.nud_Minutes);
             this.Controls.Add(this.nud_Hours);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pcb_Alarm);
             this.Controls.Add(this.pcb_OnOff);
@@ -312,13 +324,13 @@
             this.Load += new System.EventHandler(this.WatchTester_Load);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.WatchTester_MouseClick);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.digitalWatch1_MouseDown);
-            ((System.ComponentModel.ISupportInitialize)(this.pcb_OnOff)).EndInit();
             this.cms_Settings.ResumeLayout(false);
             this.cms_NotifyIcon.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pcb_Alarm)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Hours)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Minutes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Seconds)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcb_Alarm)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcb_OnOff)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -346,6 +358,7 @@
         private System.Windows.Forms.NumericUpDown nud_Hours;
         private System.Windows.Forms.NumericUpDown nud_Minutes;
         private System.Windows.Forms.NumericUpDown nud_Seconds;
+        private System.Windows.Forms.Label label3;
     }
 }
 

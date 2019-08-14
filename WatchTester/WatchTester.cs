@@ -248,15 +248,14 @@ namespace WatchTester
         private void pcb_Alarm_MouseDown(object sender, MouseEventArgs e)
         {
             pcb_Alarm.Image = Properties.Resources.pressedButton;
-            
+            if (!digitalWatch1.Alarm)
+            digitalWatch1.AlarmOn((int)nud_Hours.Value, (int)nud_Minutes.Value, (int)nud_Seconds.Value);
         }
 
         private void pcb_Alarm_MouseUp(object sender, MouseEventArgs e)
         {
            pcb_Alarm.Image = Properties.Resources.unpressedButton;
-            if (!digitalWatch1.Alarm)
-                digitalWatch1.AlarmOn((int)nud_Hours.Value, (int)nud_Minutes.Value, (int)nud_Seconds.Value);
-            else digitalWatch1.AlarmOff();
+           if (digitalWatch1.AlarmStarted) digitalWatch1.AlarmOff();
         }
     }
 }

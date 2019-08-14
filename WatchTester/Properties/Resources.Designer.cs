@@ -61,6 +61,16 @@ namespace WatchTester.Properties {
         }
         
         /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Icon, аналогичного (Значок).
+        /// </summary>
+        internal static System.Drawing.Icon clock_with_white_face_icon_icons_com_72804 {
+            get {
+                object obj = ResourceManager.GetObject("clock_with_white_face_icon_icons_com_72804", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap pressedButton {
