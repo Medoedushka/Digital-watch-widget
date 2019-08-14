@@ -54,6 +54,7 @@
             // 
             // digitalWatch1
             // 
+            this.digitalWatch1.Alarm = false;
             this.digitalWatch1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.digitalWatch1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.digitalWatch1.DisplayColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
@@ -109,7 +110,7 @@
             this.закрепитьВиджетToolStripMenuItem,
             this.tsm_AddToAutoRun});
             this.cms_Settings.Name = "cms_Settings";
-            this.cms_Settings.Size = new System.Drawing.Size(248, 92);
+            this.cms_Settings.Size = new System.Drawing.Size(248, 70);
             // 
             // видToolStripMenuItem
             // 
@@ -120,7 +121,7 @@
             this.видToolStripMenuItem.Font = new System.Drawing.Font("Century", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.видToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.видToolStripMenuItem.Name = "видToolStripMenuItem";
-            this.видToolStripMenuItem.Size = new System.Drawing.Size(250, 22);
+            this.видToolStripMenuItem.Size = new System.Drawing.Size(247, 22);
             this.видToolStripMenuItem.Text = "Вид";
             // 
             // tsm_MostTopChange
@@ -152,7 +153,7 @@
             this.tsm_Opacity25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.tsm_Opacity25.ForeColor = System.Drawing.Color.White;
             this.tsm_Opacity25.Name = "tsm_Opacity25";
-            this.tsm_Opacity25.Size = new System.Drawing.Size(180, 22);
+            this.tsm_Opacity25.Size = new System.Drawing.Size(101, 22);
             this.tsm_Opacity25.Text = "25%";
             this.tsm_Opacity25.Click += new System.EventHandler(this.tsm_Opacity25_Click);
             // 
@@ -161,7 +162,7 @@
             this.tsm_Opacity50.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.tsm_Opacity50.ForeColor = System.Drawing.Color.White;
             this.tsm_Opacity50.Name = "tsm_Opacity50";
-            this.tsm_Opacity50.Size = new System.Drawing.Size(180, 22);
+            this.tsm_Opacity50.Size = new System.Drawing.Size(101, 22);
             this.tsm_Opacity50.Text = "50%";
             this.tsm_Opacity50.Click += new System.EventHandler(this.tsm_Opacity50_Click);
             // 
@@ -170,7 +171,7 @@
             this.tsm_Opacity75.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.tsm_Opacity75.ForeColor = System.Drawing.Color.White;
             this.tsm_Opacity75.Name = "tsm_Opacity75";
-            this.tsm_Opacity75.Size = new System.Drawing.Size(180, 22);
+            this.tsm_Opacity75.Size = new System.Drawing.Size(101, 22);
             this.tsm_Opacity75.Text = "75%";
             this.tsm_Opacity75.Click += new System.EventHandler(this.tsm_Opacity75_Click);
             // 
@@ -179,7 +180,7 @@
             this.tsm_Opacity100.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.tsm_Opacity100.ForeColor = System.Drawing.Color.White;
             this.tsm_Opacity100.Name = "tsm_Opacity100";
-            this.tsm_Opacity100.Size = new System.Drawing.Size(180, 22);
+            this.tsm_Opacity100.Size = new System.Drawing.Size(101, 22);
             this.tsm_Opacity100.Text = "100%";
             this.tsm_Opacity100.Click += new System.EventHandler(this.tsm_Opacity100_Click);
             // 
@@ -189,7 +190,7 @@
             this.закрепитьВиджетToolStripMenuItem.Font = new System.Drawing.Font("Century", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.закрепитьВиджетToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.закрепитьВиджетToolStripMenuItem.Name = "закрепитьВиджетToolStripMenuItem";
-            this.закрепитьВиджетToolStripMenuItem.Size = new System.Drawing.Size(250, 22);
+            this.закрепитьВиджетToolStripMenuItem.Size = new System.Drawing.Size(247, 22);
             this.закрепитьВиджетToolStripMenuItem.Text = "Закрепить виджет";
             this.закрепитьВиджетToolStripMenuItem.Click += new System.EventHandler(this.закрепитьВиджетToolStripMenuItem_Click);
             // 
@@ -198,7 +199,7 @@
             this.tsm_AddToAutoRun.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.tsm_AddToAutoRun.ForeColor = System.Drawing.Color.White;
             this.tsm_AddToAutoRun.Name = "tsm_AddToAutoRun";
-            this.tsm_AddToAutoRun.Size = new System.Drawing.Size(250, 22);
+            this.tsm_AddToAutoRun.Size = new System.Drawing.Size(247, 22);
             this.tsm_AddToAutoRun.Text = "Добавить виджет в автозагрузку";
             this.tsm_AddToAutoRun.Click += new System.EventHandler(this.tsm_AddToAutoRun_Click);
             // 

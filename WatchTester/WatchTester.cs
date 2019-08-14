@@ -12,7 +12,7 @@ namespace WatchTester
     public partial class WatchTester : Form
     {
         bool ActiveWatch = true;
-        string configFile = @"..\..\Resources\Config.txt";
+        string configFile = @"Config.txt";
         ConfigControler configControler;
         Color Background { get; set; }
 
@@ -38,6 +38,19 @@ namespace WatchTester
         public WatchTester()
         {
             InitializeComponent();
+            MessageBox.Show(Assembly.GetExecutingAssembly().Location);
+            string[] el = Assembly.GetExecutingAssembly().Location.Split('\\');
+            string newStr = "";
+            for (int i = 0; i < el.Length; i++)
+            {
+                newStr += el[i] + "\\";
+                if (el[i] == "Debug")
+                {
+                    newStr += "Config.txt";
+                    configFile = newStr;
+                    break;
+                }
+            }
             configControler = new ConfigControler(configFile);
             
         }
@@ -84,6 +97,7 @@ namespace WatchTester
 
         private void WatchTester_Load(object sender, EventArgs e)
         {
+            
             InitConfig();
             digitalWatch1.WatchOn();
            
@@ -215,5 +229,6 @@ namespace WatchTester
             tsm_Opacity75.Checked = false;
             tsm_Opacity100.Checked = true;
         }
+        
     }
 }
