@@ -48,16 +48,16 @@
             this.cms_NotifyIcon = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pcb_Alarm = new System.Windows.Forms.PictureBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.nud_Hours = new System.Windows.Forms.NumericUpDown();
+            this.nud_Minutes = new System.Windows.Forms.NumericUpDown();
+            this.nud_Seconds = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.pcb_OnOff)).BeginInit();
             this.cms_Settings.SuspendLayout();
             this.cms_NotifyIcon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcb_Alarm)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_Hours)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_Minutes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_Seconds)).BeginInit();
             this.SuspendLayout();
             // 
             // digitalWatch1
@@ -72,7 +72,7 @@
             this.digitalWatch1.Name = "digitalWatch1";
             this.digitalWatch1.OffColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
             this.digitalWatch1.OnColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(187)))), ((int)(((byte)(199)))));
-            this.digitalWatch1.Size = new System.Drawing.Size(225, 80);
+            this.digitalWatch1.Size = new System.Drawing.Size(239, 80);
             this.digitalWatch1.TabIndex = 2;
             // 
             // label2
@@ -81,7 +81,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(122, 150);
+            this.label2.Location = new System.Drawing.Point(135, 150);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(106, 15);
             this.label2.TabIndex = 3;
@@ -242,58 +242,58 @@
             this.pcb_Alarm.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pcb_Alarm_MouseDown);
             this.pcb_Alarm.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pcb_Alarm_MouseUp);
             // 
-            // numericUpDown1
+            // nud_Hours
             // 
-            this.numericUpDown1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.numericUpDown1.ForeColor = System.Drawing.Color.White;
-            this.numericUpDown1.Location = new System.Drawing.Point(74, 95);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.nud_Hours.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.nud_Hours.ForeColor = System.Drawing.Color.White;
+            this.nud_Hours.Location = new System.Drawing.Point(74, 95);
+            this.nud_Hours.Maximum = new decimal(new int[] {
             23,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(37, 20);
-            this.numericUpDown1.TabIndex = 6;
+            this.nud_Hours.Name = "nud_Hours";
+            this.nud_Hours.Size = new System.Drawing.Size(37, 20);
+            this.nud_Hours.TabIndex = 6;
             // 
-            // numericUpDown2
+            // nud_Minutes
             // 
-            this.numericUpDown2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.numericUpDown2.ForeColor = System.Drawing.Color.White;
-            this.numericUpDown2.Location = new System.Drawing.Point(117, 95);
-            this.numericUpDown2.Maximum = new decimal(new int[] {
+            this.nud_Minutes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.nud_Minutes.ForeColor = System.Drawing.Color.White;
+            this.nud_Minutes.Location = new System.Drawing.Point(117, 95);
+            this.nud_Minutes.Maximum = new decimal(new int[] {
             59,
             0,
             0,
             0});
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(37, 20);
-            this.numericUpDown2.TabIndex = 6;
+            this.nud_Minutes.Name = "nud_Minutes";
+            this.nud_Minutes.Size = new System.Drawing.Size(37, 20);
+            this.nud_Minutes.TabIndex = 6;
             // 
-            // numericUpDown3
+            // nud_Seconds
             // 
-            this.numericUpDown3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.numericUpDown3.ForeColor = System.Drawing.Color.White;
-            this.numericUpDown3.Location = new System.Drawing.Point(160, 95);
-            this.numericUpDown3.Maximum = new decimal(new int[] {
+            this.nud_Seconds.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.nud_Seconds.ForeColor = System.Drawing.Color.White;
+            this.nud_Seconds.Location = new System.Drawing.Point(160, 95);
+            this.nud_Seconds.Maximum = new decimal(new int[] {
             59,
             0,
             0,
             0});
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(37, 20);
-            this.numericUpDown3.TabIndex = 6;
+            this.nud_Seconds.Name = "nud_Seconds";
+            this.nud_Seconds.Size = new System.Drawing.Size(37, 20);
+            this.nud_Seconds.TabIndex = 6;
             // 
             // WatchTester
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.ClientSize = new System.Drawing.Size(231, 170);
+            this.ClientSize = new System.Drawing.Size(244, 170);
             this.ContextMenuStrip = this.cms_Settings;
-            this.Controls.Add(this.numericUpDown3);
-            this.Controls.Add(this.numericUpDown2);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.nud_Seconds);
+            this.Controls.Add(this.nud_Minutes);
+            this.Controls.Add(this.nud_Hours);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pcb_Alarm);
             this.Controls.Add(this.pcb_OnOff);
@@ -316,9 +316,9 @@
             this.cms_Settings.ResumeLayout(false);
             this.cms_NotifyIcon.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pcb_Alarm)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_Hours)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_Minutes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_Seconds)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -343,9 +343,9 @@
         private System.Windows.Forms.ToolStripMenuItem tsm_Opacity75;
         private System.Windows.Forms.ToolStripMenuItem tsm_Opacity100;
         private System.Windows.Forms.PictureBox pcb_Alarm;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
+        private System.Windows.Forms.NumericUpDown nud_Hours;
+        private System.Windows.Forms.NumericUpDown nud_Minutes;
+        private System.Windows.Forms.NumericUpDown nud_Seconds;
     }
 }
 
