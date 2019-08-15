@@ -127,5 +127,11 @@
   <ItemGroup>
     <None Include="Resources\clock-with-white-face_icon-icons.com_72804.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgonline-com-ua-Resize-xqMT0Uweb4kL8F.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgonline-com-ua-Resize-npcOgIyaFUPt2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

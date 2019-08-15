@@ -61,6 +61,16 @@ namespace WatchTester.Properties {
         }
         
         /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap checkedClose {
+            get {
+                object obj = ResourceManager.GetObject("checkedClose", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Icon, аналогичного (Значок).
         /// </summary>
         internal static System.Drawing.Icon clock_with_white_face_icon_icons_com_72804 {
@@ -76,6 +86,16 @@ namespace WatchTester.Properties {
         internal static System.Drawing.Bitmap pressedButton {
             get {
                 object obj = ResourceManager.GetObject("pressedButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap uncheckedClose {
+            get {
+                object obj = ResourceManager.GetObject("uncheckedClose", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

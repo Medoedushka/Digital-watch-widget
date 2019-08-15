@@ -9,12 +9,15 @@ using System.Diagnostics;
 using System.IO;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace WatchTester
 {
     public partial class WatchTester : Form
     {
         bool ActiveWatch = true;
+        bool HideOnMouseCursor = false;
         string configFile; // Путь к файлу с настройками виджета.
         ConfigControler configControler; // Система контроля настроек виджета.
         Color Background { get; set; }
@@ -43,7 +46,9 @@ namespace WatchTester
         public WatchTester()
         {
             InitializeComponent();
-
+            digitalWatch1.pcb_Watch.MouseMove += new MouseEventHandler(WatchTester_MouseMove);
+           
+            
             // Генерация пути к файлу с настройками.
             string[] el = Assembly.GetExecutingAssembly().Location.Split('\\');
             string newStr = "";
@@ -61,6 +66,7 @@ namespace WatchTester
             configControler = new ConfigControler(configFile);
             cms_Settings.Renderer = new ContextMenuStripBackColorRenderer();
             cms_Settings.Invalidate();
+            
         }
 
         // Включение/выключение часов.
@@ -178,6 +184,7 @@ namespace WatchTester
             tsm_Opacity50.Checked = false;
             tsm_Opacity75.Checked = false;
             tsm_Opacity100.Checked = false;
+            tsm_HideOnMouseCursor.Checked = true;
         }
         private void tsm_Opacity50_Click(object sender, EventArgs e)
         {
@@ -244,7 +251,11 @@ namespace WatchTester
             // Настройка прозрачности виджета.
             answer = configControler.GetConfig("Opacity");
             this.Opacity = double.Parse(answer.Replace('.', ','));
-            if (answer == "0.25") tsm_Opacity25.Checked = true;
+            if (answer == "0.25")
+            {
+                tsm_Opacity25.Checked = true;
+                tsm_HideOnMouseCursor.Checked = true; // Прозрачность окна
+            }
             else if (answer == "0.50") tsm_Opacity50.Checked = true;
             else if (answer == "0.75") tsm_Opacity75.Checked = true;
             else tsm_Opacity100.Checked = true;
@@ -253,6 +264,11 @@ namespace WatchTester
             answer = configControler.GetConfig("AlarmSoundPath");
             if (answer == "default") digitalWatch1.SetAlarmAudio();
             else digitalWatch1.SetAlarmAudio(answer);
+
+            // Настройка исчезновения формы при наведении мышкой.
+            answer = configControler.GetConfig("HideOnMouseCursor");
+            if (answer == "true") tsm_HideOnMouseCursor.Checked = true;
+            else tsm_HideOnMouseCursor.Checked = false;
         }
 
         private void pcb_Alarm_MouseDown(object sender, MouseEventArgs e)
@@ -283,5 +299,56 @@ namespace WatchTester
                 configControler.SetConfig("AlarmSoundPath=" + soundPath);
             }
         }
+        
+        // Крестик закрытия виджета.
+        private void pcb_CloseWidget_MouseEnter(object sender, EventArgs e)
+        {
+            pcb_CloseWidget.Image = Properties.Resources.checkedClose;
+        }
+        private void pcb_CloseWidget_MouseLeave(object sender, EventArgs e)
+        {
+            pcb_CloseWidget.Image = Properties.Resources.uncheckedClose;
+        }
+        private void pcb_CloseWidget_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void tsm_HideOnMouseCursor_Click(object sender, EventArgs e)
+        {
+            tsm_HideOnMouseCursor.Checked = !tsm_HideOnMouseCursor.Checked;
+        }
+        private void tsm_HideOnMouseCursor_CheckedChanged(object sender, EventArgs e)
+        {
+            if (tsm_HideOnMouseCursor.Checked) HideOnMouseCursor = true;
+            else HideOnMouseCursor = false;
+            configControler.SetConfig("HideOnMouseCursor=" + HideOnMouseCursor.ToString().ToLower());
+        }
+
+        async private void WatchTester_MouseMove(object sender, MouseEventArgs e)
+        {
+            int cx = Cursor.Position.X;
+            int cy = Cursor.Position.Y;
+            if (HideOnMouseCursor == true && cx > this.Location.X && cx < (this.Location.X + this.Width) &&
+                cy > this.Location.Y && cy < (this.Location.Y + this.Height))
+            {
+                this.Hide();
+                await Task.Run(() =>
+                {
+                    bool onForm = true;
+                    while (onForm)
+                    {
+                        cx = Cursor.Position.X;
+                        cy = Cursor.Position.Y;
+                        if (HideOnMouseCursor == true && (cx < this.Location.X || cx > (this.Location.X + this.Width) ||
+                           cy < this.Location.Y || cy > (this.Location.Y + this.Height))) onForm = false;
+
+                    }
+                });
+                this.Show();
+            }
+            
+        }
+        
     }
 }

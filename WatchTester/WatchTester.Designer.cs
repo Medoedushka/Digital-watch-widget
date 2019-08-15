@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WatchTester));
-            this.digitalWatch1 = new Watch.DigitalWatch();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cms_Settings = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -43,8 +42,10 @@
             this.tsm_Opacity100 = new System.Windows.Forms.ToolStripMenuItem();
             this.закрепитьВиджетToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsm_AddToAutoRun = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsm_ChangeAlarmSound = new System.Windows.Forms.ToolStripMenuItem();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.cms_NotifyIcon = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsm_HideOnMouseCursor = new System.Windows.Forms.ToolStripMenuItem();
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nud_Hours = new System.Windows.Forms.NumericUpDown();
             this.nud_Minutes = new System.Windows.Forms.NumericUpDown();
@@ -52,7 +53,8 @@
             this.pcb_Alarm = new System.Windows.Forms.PictureBox();
             this.pcb_OnOff = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.tsm_ChangeAlarmSound = new System.Windows.Forms.ToolStripMenuItem();
+            this.pcb_CloseWidget = new System.Windows.Forms.PictureBox();
+            this.digitalWatch1 = new Watch.DigitalWatch();
             this.cms_Settings.SuspendLayout();
             this.cms_NotifyIcon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Hours)).BeginInit();
@@ -60,23 +62,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nud_Seconds)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcb_Alarm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcb_OnOff)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcb_CloseWidget)).BeginInit();
             this.SuspendLayout();
-            // 
-            // digitalWatch1
-            // 
-            this.digitalWatch1.Alarm = false;
-            this.digitalWatch1.AlarmStarted = false;
-            this.digitalWatch1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.digitalWatch1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.digitalWatch1.DisplayColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.digitalWatch1.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.digitalWatch1.Location = new System.Drawing.Point(2, 16);
-            this.digitalWatch1.Margin = new System.Windows.Forms.Padding(4);
-            this.digitalWatch1.Name = "digitalWatch1";
-            this.digitalWatch1.OffColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
-            this.digitalWatch1.OnColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(187)))), ((int)(((byte)(199)))));
-            this.digitalWatch1.Size = new System.Drawing.Size(239, 80);
-            this.digitalWatch1.TabIndex = 2;
             // 
             // label2
             // 
@@ -88,6 +75,7 @@
             this.label2.Size = new System.Drawing.Size(106, 15);
             this.label2.TabIndex = 3;
             this.label2.Text = "Created by Medoed";
+            this.label2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.WatchTester_MouseMove);
             // 
             // label1
             // 
@@ -109,7 +97,7 @@
             this.tsm_AddToAutoRun,
             this.tsm_ChangeAlarmSound});
             this.cms_Settings.Name = "cms_Settings";
-            this.cms_Settings.Size = new System.Drawing.Size(248, 114);
+            this.cms_Settings.Size = new System.Drawing.Size(248, 92);
             // 
             // видToolStripMenuItem
             // 
@@ -202,6 +190,15 @@
             this.tsm_AddToAutoRun.Text = "Добавить виджет в автозагрузку";
             this.tsm_AddToAutoRun.Click += new System.EventHandler(this.tsm_AddToAutoRun_Click);
             // 
+            // tsm_ChangeAlarmSound
+            // 
+            this.tsm_ChangeAlarmSound.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.tsm_ChangeAlarmSound.ForeColor = System.Drawing.Color.White;
+            this.tsm_ChangeAlarmSound.Name = "tsm_ChangeAlarmSound";
+            this.tsm_ChangeAlarmSound.Size = new System.Drawing.Size(247, 22);
+            this.tsm_ChangeAlarmSound.Text = "Изменить мелодию будильника";
+            this.tsm_ChangeAlarmSound.Click += new System.EventHandler(this.tsm_ChangeAlarmSound_Click);
+            // 
             // notifyIcon1
             // 
             this.notifyIcon1.ContextMenuStrip = this.cms_NotifyIcon;
@@ -212,14 +209,23 @@
             // cms_NotifyIcon
             // 
             this.cms_NotifyIcon.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsm_HideOnMouseCursor,
             this.выходToolStripMenuItem});
             this.cms_NotifyIcon.Name = "cms_NotifyIcon";
-            this.cms_NotifyIcon.Size = new System.Drawing.Size(109, 26);
+            this.cms_NotifyIcon.Size = new System.Drawing.Size(210, 48);
+            // 
+            // tsm_HideOnMouseCursor
+            // 
+            this.tsm_HideOnMouseCursor.Name = "tsm_HideOnMouseCursor";
+            this.tsm_HideOnMouseCursor.Size = new System.Drawing.Size(209, 22);
+            this.tsm_HideOnMouseCursor.Text = "Исчезать при наведении";
+            this.tsm_HideOnMouseCursor.CheckedChanged += new System.EventHandler(this.tsm_HideOnMouseCursor_CheckedChanged);
+            this.tsm_HideOnMouseCursor.Click += new System.EventHandler(this.tsm_HideOnMouseCursor_Click);
             // 
             // выходToolStripMenuItem
             // 
             this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
             this.выходToolStripMenuItem.Text = "Выход";
             this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
             // 
@@ -298,14 +304,33 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "ALARM";
             // 
-            // tsm_ChangeAlarmSound
+            // pcb_CloseWidget
             // 
-            this.tsm_ChangeAlarmSound.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.tsm_ChangeAlarmSound.ForeColor = System.Drawing.Color.White;
-            this.tsm_ChangeAlarmSound.Name = "tsm_ChangeAlarmSound";
-            this.tsm_ChangeAlarmSound.Size = new System.Drawing.Size(247, 22);
-            this.tsm_ChangeAlarmSound.Text = "Изменить мелодию будильника";
-            this.tsm_ChangeAlarmSound.Click += new System.EventHandler(this.tsm_ChangeAlarmSound_Click);
+            this.pcb_CloseWidget.Image = global::WatchTester.Properties.Resources.uncheckedClose;
+            this.pcb_CloseWidget.Location = new System.Drawing.Point(226, 0);
+            this.pcb_CloseWidget.Name = "pcb_CloseWidget";
+            this.pcb_CloseWidget.Size = new System.Drawing.Size(15, 15);
+            this.pcb_CloseWidget.TabIndex = 7;
+            this.pcb_CloseWidget.TabStop = false;
+            this.pcb_CloseWidget.Click += new System.EventHandler(this.pcb_CloseWidget_Click);
+            this.pcb_CloseWidget.MouseEnter += new System.EventHandler(this.pcb_CloseWidget_MouseEnter);
+            this.pcb_CloseWidget.MouseLeave += new System.EventHandler(this.pcb_CloseWidget_MouseLeave);
+            // 
+            // digitalWatch1
+            // 
+            this.digitalWatch1.Alarm = false;
+            this.digitalWatch1.AlarmStarted = false;
+            this.digitalWatch1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.digitalWatch1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.digitalWatch1.DisplayColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.digitalWatch1.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.digitalWatch1.Location = new System.Drawing.Point(2, 16);
+            this.digitalWatch1.Margin = new System.Windows.Forms.Padding(4);
+            this.digitalWatch1.Name = "digitalWatch1";
+            this.digitalWatch1.OffColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
+            this.digitalWatch1.OnColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(187)))), ((int)(((byte)(199)))));
+            this.digitalWatch1.Size = new System.Drawing.Size(239, 80);
+            this.digitalWatch1.TabIndex = 2;
             // 
             // WatchTester
             // 
@@ -314,6 +339,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.ClientSize = new System.Drawing.Size(244, 151);
             this.ContextMenuStrip = this.cms_Settings;
+            this.Controls.Add(this.pcb_CloseWidget);
             this.Controls.Add(this.nud_Seconds);
             this.Controls.Add(this.nud_Minutes);
             this.Controls.Add(this.nud_Hours);
@@ -336,6 +362,7 @@
             this.Load += new System.EventHandler(this.WatchTester_Load);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.WatchTester_MouseClick);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.digitalWatch1_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.WatchTester_MouseMove);
             this.cms_Settings.ResumeLayout(false);
             this.cms_NotifyIcon.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nud_Hours)).EndInit();
@@ -343,6 +370,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nud_Seconds)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcb_Alarm)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcb_OnOff)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcb_CloseWidget)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -372,6 +400,8 @@
         private System.Windows.Forms.NumericUpDown nud_Seconds;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ToolStripMenuItem tsm_ChangeAlarmSound;
+        private System.Windows.Forms.PictureBox pcb_CloseWidget;
+        private System.Windows.Forms.ToolStripMenuItem tsm_HideOnMouseCursor;
     }
 }
 
