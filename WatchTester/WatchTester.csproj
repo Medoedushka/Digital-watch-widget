@@ -71,6 +71,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ContextMenuStripBackColorRenderer.cs" />
     <Compile Include="WatchTester.cs">
       <SubType>Form</SubType>
     </Compile>

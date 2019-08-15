@@ -52,6 +52,7 @@
             this.pcb_Alarm = new System.Windows.Forms.PictureBox();
             this.pcb_OnOff = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.tsm_ChangeAlarmSound = new System.Windows.Forms.ToolStripMenuItem();
             this.cms_Settings.SuspendLayout();
             this.cms_NotifyIcon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Hours)).BeginInit();
@@ -64,6 +65,7 @@
             // digitalWatch1
             // 
             this.digitalWatch1.Alarm = false;
+            this.digitalWatch1.AlarmStarted = false;
             this.digitalWatch1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.digitalWatch1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.digitalWatch1.DisplayColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
@@ -104,9 +106,10 @@
             this.cms_Settings.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.видToolStripMenuItem,
             this.закрепитьВиджетToolStripMenuItem,
-            this.tsm_AddToAutoRun});
+            this.tsm_AddToAutoRun,
+            this.tsm_ChangeAlarmSound});
             this.cms_Settings.Name = "cms_Settings";
-            this.cms_Settings.Size = new System.Drawing.Size(248, 70);
+            this.cms_Settings.Size = new System.Drawing.Size(248, 114);
             // 
             // видToolStripMenuItem
             // 
@@ -295,6 +298,15 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "ALARM";
             // 
+            // tsm_ChangeAlarmSound
+            // 
+            this.tsm_ChangeAlarmSound.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.tsm_ChangeAlarmSound.ForeColor = System.Drawing.Color.White;
+            this.tsm_ChangeAlarmSound.Name = "tsm_ChangeAlarmSound";
+            this.tsm_ChangeAlarmSound.Size = new System.Drawing.Size(247, 22);
+            this.tsm_ChangeAlarmSound.Text = "Изменить мелодию будильника";
+            this.tsm_ChangeAlarmSound.Click += new System.EventHandler(this.tsm_ChangeAlarmSound_Click);
+            // 
             // WatchTester
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -359,6 +371,7 @@
         private System.Windows.Forms.NumericUpDown nud_Minutes;
         private System.Windows.Forms.NumericUpDown nud_Seconds;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ToolStripMenuItem tsm_ChangeAlarmSound;
     }
 }
 
