@@ -63,6 +63,16 @@ namespace WatchTester.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap checked36px {
+            get {
+                object obj = ResourceManager.GetObject("checked36px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap checkedClose {
             get {
                 object obj = ResourceManager.GetObject("checkedClose", resourceCulture);
@@ -86,6 +96,16 @@ namespace WatchTester.Properties {
         internal static System.Drawing.Bitmap pressedButton {
             get {
                 object obj = ResourceManager.GetObject("pressedButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap unchecked36px {
+            get {
+                object obj = ResourceManager.GetObject("unchecked36px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

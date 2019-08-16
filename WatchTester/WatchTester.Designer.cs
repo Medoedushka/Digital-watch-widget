@@ -56,6 +56,7 @@
             this.pcb_CloseWidget = new System.Windows.Forms.PictureBox();
             this.digitalWatch1 = new Watch.DigitalWatch();
             this.tsm_ShowSeconds = new System.Windows.Forms.ToolStripMenuItem();
+            this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cms_Settings.SuspendLayout();
             this.cms_NotifyIcon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Hours)).BeginInit();
@@ -98,7 +99,7 @@
             this.tsm_AddToAutoRun,
             this.tsm_ChangeAlarmSound});
             this.cms_Settings.Name = "cms_Settings";
-            this.cms_Settings.Size = new System.Drawing.Size(248, 114);
+            this.cms_Settings.Size = new System.Drawing.Size(248, 92);
             // 
             // видToolStripMenuItem
             // 
@@ -212,9 +213,10 @@
             // 
             this.cms_NotifyIcon.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsm_HideOnMouseCursor,
+            this.справкаToolStripMenuItem,
             this.выходToolStripMenuItem});
             this.cms_NotifyIcon.Name = "cms_NotifyIcon";
-            this.cms_NotifyIcon.Size = new System.Drawing.Size(210, 48);
+            this.cms_NotifyIcon.Size = new System.Drawing.Size(210, 92);
             // 
             // tsm_HideOnMouseCursor
             // 
@@ -348,6 +350,12 @@
             this.tsm_ShowSeconds.CheckedChanged += new System.EventHandler(this.tsm_ShowSeconds_CheckedChanged);
             this.tsm_ShowSeconds.Click += new System.EventHandler(this.tsm_ShowSeconds_Click);
             // 
+            // справкаToolStripMenuItem
+            // 
+            this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
+            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
+            this.справкаToolStripMenuItem.Text = "Справка";
+            // 
             // WatchTester
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -419,6 +427,7 @@
         private System.Windows.Forms.PictureBox pcb_CloseWidget;
         private System.Windows.Forms.ToolStripMenuItem tsm_HideOnMouseCursor;
         private System.Windows.Forms.ToolStripMenuItem tsm_ShowSeconds;
+        private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
     }
 }
 

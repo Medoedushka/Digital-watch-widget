@@ -47,8 +47,8 @@ namespace WatchTester
         {
             InitializeComponent();
             digitalWatch1.pcb_Watch.MouseMove += new MouseEventHandler(WatchTester_MouseMove);
-           
-            
+            справкаToolStripMenuItem.Click += (s, e) => { Info info = new Info(); info.Show(); };
+
             // Генерация пути к файлу с настройками.
             string[] el = Assembly.GetExecutingAssembly().Location.Split('\\');
             string newStr = "";
@@ -274,6 +274,7 @@ namespace WatchTester
             answer = configControler.GetConfig("ShowSeconds");
             if (answer == "true") tsm_ShowSeconds.Checked = true;
             else tsm_ShowSeconds.Checked = false;
+            
         }
 
         private void pcb_Alarm_MouseDown(object sender, MouseEventArgs e)

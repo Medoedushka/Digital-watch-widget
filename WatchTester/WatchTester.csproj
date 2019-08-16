@@ -7,11 +7,12 @@
     <ProjectGuid>{C8EA7E41-66B4-4C48-9A33-D7C13490FA39}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>WatchTester</RootNamespace>
-    <AssemblyName>Watch widget</AssemblyName>
+    <AssemblyName>Digital watch widget</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -72,6 +72,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ContextMenuStripBackColorRenderer.cs" />
+    <Compile Include="Info.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Info.Designer.cs">
+      <DependentUpon>Info.cs</DependentUpon>
+    </Compile>
     <Compile Include="WatchTester.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Info.resx">
+      <DependentUpon>Info.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WatchTester.resx">
       <DependentUpon>WatchTester.cs</DependentUpon>
     </EmbeddedResource>
@@ -132,6 +141,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\imgonline-com-ua-Resize-npcOgIyaFUPt2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unchecked36px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checked36px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
