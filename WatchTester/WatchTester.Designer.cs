@@ -55,6 +55,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.pcb_CloseWidget = new System.Windows.Forms.PictureBox();
             this.digitalWatch1 = new Watch.DigitalWatch();
+            this.tsm_ShowSeconds = new System.Windows.Forms.ToolStripMenuItem();
             this.cms_Settings.SuspendLayout();
             this.cms_NotifyIcon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Hours)).BeginInit();
@@ -97,14 +98,15 @@
             this.tsm_AddToAutoRun,
             this.tsm_ChangeAlarmSound});
             this.cms_Settings.Name = "cms_Settings";
-            this.cms_Settings.Size = new System.Drawing.Size(248, 92);
+            this.cms_Settings.Size = new System.Drawing.Size(248, 114);
             // 
             // видToolStripMenuItem
             // 
             this.видToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.видToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsm_MostTopChange,
-            this.прозрачностьToolStripMenuItem});
+            this.прозрачностьToolStripMenuItem,
+            this.tsm_ShowSeconds});
             this.видToolStripMenuItem.Font = new System.Drawing.Font("Century", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.видToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.видToolStripMenuItem.Name = "видToolStripMenuItem";
@@ -118,7 +120,7 @@
             this.tsm_MostTopChange.CheckState = System.Windows.Forms.CheckState.Checked;
             this.tsm_MostTopChange.ForeColor = System.Drawing.Color.White;
             this.tsm_MostTopChange.Name = "tsm_MostTopChange";
-            this.tsm_MostTopChange.Size = new System.Drawing.Size(180, 22);
+            this.tsm_MostTopChange.Size = new System.Drawing.Size(186, 22);
             this.tsm_MostTopChange.Text = "Поверх других окон";
             this.tsm_MostTopChange.Click += new System.EventHandler(this.tsm_MostTopChange_Click);
             // 
@@ -132,7 +134,7 @@
             this.tsm_Opacity100});
             this.прозрачностьToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.прозрачностьToolStripMenuItem.Name = "прозрачностьToolStripMenuItem";
-            this.прозрачностьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.прозрачностьToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.прозрачностьToolStripMenuItem.Text = "Прозрачность";
             // 
             // tsm_Opacity25
@@ -336,6 +338,16 @@
             this.digitalWatch1.Size = new System.Drawing.Size(356, 80);
             this.digitalWatch1.TabIndex = 2;
             // 
+            // tsm_ShowSeconds
+            // 
+            this.tsm_ShowSeconds.Checked = true;
+            this.tsm_ShowSeconds.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.tsm_ShowSeconds.Name = "tsm_ShowSeconds";
+            this.tsm_ShowSeconds.Size = new System.Drawing.Size(186, 22);
+            this.tsm_ShowSeconds.Text = "Отображение секунд";
+            this.tsm_ShowSeconds.CheckedChanged += new System.EventHandler(this.tsm_ShowSeconds_CheckedChanged);
+            this.tsm_ShowSeconds.Click += new System.EventHandler(this.tsm_ShowSeconds_Click);
+            // 
             // WatchTester
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -406,6 +418,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsm_ChangeAlarmSound;
         private System.Windows.Forms.PictureBox pcb_CloseWidget;
         private System.Windows.Forms.ToolStripMenuItem tsm_HideOnMouseCursor;
+        private System.Windows.Forms.ToolStripMenuItem tsm_ShowSeconds;
     }
 }
 

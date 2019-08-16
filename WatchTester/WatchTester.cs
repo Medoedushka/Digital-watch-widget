@@ -269,6 +269,11 @@ namespace WatchTester
             answer = configControler.GetConfig("HideOnMouseCursor");
             if (answer == "true") tsm_HideOnMouseCursor.Checked = true;
             else tsm_HideOnMouseCursor.Checked = false;
+
+            // Настройка отображение секунд.
+            answer = configControler.GetConfig("ShowSeconds");
+            if (answer == "true") tsm_ShowSeconds.Checked = true;
+            else tsm_ShowSeconds.Checked = false;
         }
 
         private void pcb_Alarm_MouseDown(object sender, MouseEventArgs e)
@@ -349,6 +354,24 @@ namespace WatchTester
             }
             
         }
-        
+
+        private void tsm_ShowSeconds_Click(object sender, EventArgs e)
+        {
+            tsm_ShowSeconds.Checked = !tsm_ShowSeconds.Checked;
+        }
+
+        private void tsm_ShowSeconds_CheckedChanged(object sender, EventArgs e)
+        {
+            if (tsm_ShowSeconds.Checked)
+            {
+                this.Width = 361;
+                configControler.SetConfig("ShowSeconds=true");
+            }
+            else
+            {
+                this.Width = 240;
+                configControler.SetConfig("ShowSeconds=false");
+            }
+        }
     }
 }
