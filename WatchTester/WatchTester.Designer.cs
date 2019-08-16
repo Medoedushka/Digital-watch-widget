@@ -306,8 +306,10 @@
             // 
             // pcb_CloseWidget
             // 
+            this.pcb_CloseWidget.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pcb_CloseWidget.Image = global::WatchTester.Properties.Resources.uncheckedClose;
-            this.pcb_CloseWidget.Location = new System.Drawing.Point(226, 0);
+            this.pcb_CloseWidget.Location = new System.Drawing.Point(343, 0);
             this.pcb_CloseWidget.Name = "pcb_CloseWidget";
             this.pcb_CloseWidget.Size = new System.Drawing.Size(15, 15);
             this.pcb_CloseWidget.TabIndex = 7;
@@ -320,6 +322,8 @@
             // 
             this.digitalWatch1.Alarm = false;
             this.digitalWatch1.AlarmStarted = false;
+            this.digitalWatch1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.digitalWatch1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.digitalWatch1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.digitalWatch1.DisplayColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
@@ -329,7 +333,7 @@
             this.digitalWatch1.Name = "digitalWatch1";
             this.digitalWatch1.OffColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
             this.digitalWatch1.OnColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(187)))), ((int)(((byte)(199)))));
-            this.digitalWatch1.Size = new System.Drawing.Size(239, 80);
+            this.digitalWatch1.Size = new System.Drawing.Size(356, 80);
             this.digitalWatch1.TabIndex = 2;
             // 
             // WatchTester
@@ -337,7 +341,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.ClientSize = new System.Drawing.Size(244, 151);
+            this.ClientSize = new System.Drawing.Size(361, 151);
             this.ContextMenuStrip = this.cms_Settings;
             this.Controls.Add(this.pcb_CloseWidget);
             this.Controls.Add(this.nud_Seconds);
